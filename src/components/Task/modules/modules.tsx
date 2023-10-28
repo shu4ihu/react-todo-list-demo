@@ -8,4 +8,8 @@ interface TaskProps{
     taskList : TaskModel[]
 }
 
-export type { TaskModel, TaskProps}
+interface TaskCardProps{
+    taskItem: TaskModel
+}
+
+export type { TaskModel, TaskProps, TaskCardProps}

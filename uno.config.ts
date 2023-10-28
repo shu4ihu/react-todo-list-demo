@@ -39,6 +39,15 @@ export default defineConfig({
 				"font-size": "1.25rem",
 			},
 		],
+		[
+			"text-y-truncate",
+			{
+				display: "-webkit-box",
+				"-webkit-box-orient": "vertical",
+				"-webkit-line-clamp": "5",
+				overflow: "hidden",
+			},
+		],
 	],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
 });

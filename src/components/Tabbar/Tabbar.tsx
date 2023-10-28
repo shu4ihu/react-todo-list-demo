@@ -1,7 +1,6 @@
 import { FC, useState } from 'react'
 import TabbarColorList from './components/TabbarColorList'
 import TabbarLogoText from './components/TabbarLogoText'
-import Task from '../Task/Task'
 import type { TaskModel } from '../Task/modules/modules'
 
 const Tabbar:FC = ()=>{
@@ -30,11 +29,11 @@ const Tabbar:FC = ()=>{
 
     return (
         <>
-            <div className='flex w-100vw h-full'>
+            <div className='flex h-full'>
                 <div className="tabbar w-16vw h-full flex flex-col b-r-1">
                     <TabbarLogoText></TabbarLogoText>
                     <div className="tabbar-content w-full h-full flex flex-col items-center">
-                        <div className="tabbar-content-add w-12 h-12 lh-12 mt-10
+                        <div className="tabbar-content-add w-12 h-12 lh-12 mt-2
                             op-90 bg-black text-white flex justify-center items-center rounded-50%" 
                             onClick={() => {handleAddTaskClick()}}
                         >
@@ -46,9 +45,6 @@ const Tabbar:FC = ()=>{
                             : null
                         }
                     </div>
-                </div>
-                <div className='w-84vw h-full'>
-                    <Task taskList={taskList}></Task>
                 </div>
             </div>
         </>
