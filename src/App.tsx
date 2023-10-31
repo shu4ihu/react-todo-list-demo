@@ -67,14 +67,14 @@ function App(): ReactNode {
 
   return (
     <>
-      <div className="w-100vw h-100vh flex">
+      <div className="w-100vw h-100vh md:flex">
         <Tabbar taskList={taskList} setTaskList={setTaskList}/>
-        <div className='ml-16vw w-84vw h-full pl-8'>
+        <div className='md:w-84vw h-full md:pl-8 flex flex-col md:items-baseline'>
             <SearchBar></SearchBar>
-            <div className="w-full">
+            <div className="w-full md:pl-0 pl-8vw">
               <div className="text-6xl font-600">Notes</div>
             </div>
-            <div className="taskArea w-full pt-14">
+            <div className="taskArea w-full pt-6vh md:pl-0 pl-8vw">
               <Task taskList={taskList} setTaskList={setTaskList}></Task>
             </div>
         </div>

@@ -16,7 +16,6 @@ export const TaskCard:FC<TaskCardProps> = ({taskItem, onDel, onDone, onTextChang
     }
 
     const handleFocus = (): void => {
-      // console.log(textareaRef)
       textareaRef.current?.focus()
       textareaRef.current?.setSelectionRange(-1,-1)
     }
@@ -33,18 +32,18 @@ export const TaskCard:FC<TaskCardProps> = ({taskItem, onDel, onDone, onTextChang
                 {taskDateString}
               </div>
               <div className="btnArea h-full flex gap-2 items-center text-white text-sm">
-                <div className="editBtn w-8 h-8 bg-black op-80 rounded-50% flex justify-center items-center"
+                <div className="editBtn w-8 h-8 bg-black rounded-50% flex justify-center items-center"
                     onClick={() =>{ handleFocus()}}
                 >
                   <div className="i-carbon-paint-brush-alt">
                   </div>
                 </div>
-                <div className="doneBtn w-8 h-8 bg-black op-80 rounded-50% flex justify-center items-center text-lg"
+                <div className="doneBtn w-8 h-8 bg-black rounded-50% flex justify-center items-center text-lg"
                     onClick={()=>{ onDone(taskItem.id) }}
                 >
                   {checkIsDone(taskItem.isDone, bgColor)}
                 </div>
-                <div className="editBtn w-8 h-8 bg-black op-80 rounded-50% flex justify-center items-center"
+                <div className="editBtn w-8 h-8 bg-black rounded-50% flex justify-center items-center"
                     onClick={()=>{ onDel(taskItem.id) }}
                 >
                   <div className="i-carbon-trash-can">

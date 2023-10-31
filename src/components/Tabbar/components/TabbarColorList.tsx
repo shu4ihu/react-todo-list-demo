@@ -14,8 +14,8 @@ const TabbarColorList: FC<TabbarColorListProps> = ({colorList, onAddTask}: Tabba
         )
     })
     return (
-        <div className="tabbar-color-list mt-6">
-            <ul className="flex flex-col gap-6">
+        <div className="tabbar-color-list md:mt-6 ml-6 md:ml-0">
+            <ul className="flex md:flex-col gap-6">
                 {list}
             </ul>
         </div>

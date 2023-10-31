@@ -24,11 +24,11 @@ const Tabbar:FC<TabbarProps> = ({ taskList, setTaskList}: TabbarProps): ReactNod
     }
 
     return (
-        <div className='h-full'>
-            <div className="tabbar w-16vw h-full flex flex-col b-r-1 fixed">
+        <div className='md:h-full md:w-12vw flex items-center'>
+            <div className="tabbar md:w-12vw w-full md:h-full flex flex-col md:b-r-1 md:fixed justify-between">
                 <TabbarLogoText></TabbarLogoText>
-                <div className="tabbar-content w-full h-full flex flex-col items-center">
-                    <div className="tabbar-content-add w-12 h-12 lh-12 mt-2
+                <div className="tabbar-content md:w-full h-full flex md:flex-col items-center md:pl-0 pl-8vw md:mt-0 mt-2vh">
+                    <div className="tabbar-content-add md:w-12 md:h-12 md:mt-2 
                         op-90 bg-black text-white flex justify-center items-center rounded-50%" 
                         onClick={() => {handleAddTaskClick()}}
                     >
