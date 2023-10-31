@@ -48,6 +48,12 @@ export default defineConfig({
 				overflow: "hidden",
 			},
 		],
+		[
+			"input-primary",
+			{
+				"outline-style": "none",
+			},
+		],
 	],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
 });

@@ -1,13 +1,9 @@
 import { FC } from "react"
+import type { TabbarColorListProps } from "../modules/modules"
 
-interface TabbarColorListProps {
-    colorList: string[]
-    clickItem: (index: number) => void 
-}
-
-const TabbarColorList: FC<TabbarColorListProps> = ({colorList, clickItem}: TabbarColorListProps)=> {
+const TabbarColorList: FC<TabbarColorListProps> = ({colorList, onAddTask}: TabbarColorListProps)=> {
     const handleClick = (index: number) =>{
-        clickItem(index)
+        onAddTask(index)
     }
     const list = colorList.map((item: string, index: number):JSX.Element => {
         const key = `${item}-${index}`

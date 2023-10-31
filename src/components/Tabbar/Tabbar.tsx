@@ -1,27 +1,23 @@
-import { FC, useState } from 'react'
+import { FC, ReactNode, useState } from 'react'
 import TabbarColorList from './components/TabbarColorList'
 import TabbarLogoText from './components/TabbarLogoText'
 import type { TaskModel } from '../Task/modules/modules'
+import type { TabbarProps } from './modules/modules'
 
-const Tabbar:FC = ()=>{
+const Tabbar:FC<TabbarProps> = ({ taskList, setTaskList}: TabbarProps): ReactNode=>{
     const [showColorList, setShowColorList] = useState(false)
-    const [taskList, setTaskList] = useState([
-        {
-            content: "remember code",
-            createdTime: new Date("2023-10-26"),
-            isDone: false
-        }
-    ])
     const colorList: string[] = ['#f7d289','#f2aa85','#b99ff7','#63d6fa','#e9f1a4']
 
     const handleAddTaskClick = (): void => {
         setShowColorList(!showColorList)
     }
     
-    const addTask = (): void => {
+    const handleAddTask = (index: number): void => {
         const task: TaskModel = {
-            content: "123",
+            id: Date.now(),
+            content: "Note",
             createdTime: new Date(),
+            cardColor: colorList[index],
             isDone: false
         } 
         setTaskList([...taskList,task])
@@ -29,8 +25,8 @@ const Tabbar:FC = ()=>{
 
     return (
         <>
-            <div className='flex h-full'>
-                <div className="tabbar w-16vw h-full flex flex-col b-r-1">
+            <div className='h-full'>
+                <div className="tabbar w-16vw h-full flex flex-col b-r-1 fixed">
                     <TabbarLogoText></TabbarLogoText>
                     <div className="tabbar-content w-full h-full flex flex-col items-center">
                         <div className="tabbar-content-add w-12 h-12 lh-12 mt-2
@@ -41,7 +37,7 @@ const Tabbar:FC = ()=>{
                         </div>
                         {
                             showColorList ? 
-                            <TabbarColorList colorList={colorList} clickItem={addTask}/>
+                            <TabbarColorList colorList={colorList} onAddTask={handleAddTask}/>
                             : null
                         }
                     </div>
