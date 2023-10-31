@@ -1,5 +1,5 @@
 import { FC, ReactNode, useRef } from "react"
-import type { TaskCardProps } from "../modules/modules"
+import type { TaskCardProps } from "@Task/modules/modules"
 
 const checkIsDone:FC<boolean> = (isDone: boolean, bgColor: object): ReactNode => {
     return (

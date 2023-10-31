@@ -18,7 +18,26 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "./",
+    "paths":{
+      "@/*":[
+        "src/*"
+      ],
+      "@Tabbar/*":[
+        "src/components/Tabbar/*"
+      ],
+      "@Task/*":[
+        "src/components/Task/*"
+      ],
+      "@TabbarComp/*":[
+        "src/components/Tabbar/components/*"
+      ],
+      "@TaskComp/*":[
+        "src/components/Task/components/*"
+      ],
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

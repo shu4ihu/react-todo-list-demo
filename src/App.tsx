@@ -1,8 +1,8 @@
 import { ReactNode, useState } from "react"
-import Tabbar from "./components/Tabbar/Tabbar"
-import Task from "./components/Task/Task"
-import SearchBar from "./components/SearchBar/SearchBar"
-import type { TaskModel } from "./components/Task/modules/modules"
+import Tabbar from "@Tabbar/Tabbar"
+import Task from "@Task/Task"
+import SearchBar from "@/components/SearchBar/SearchBar"
+import type { TaskModel } from "@Task/modules/modules"
 
 function App(): ReactNode {
   // 预设数据

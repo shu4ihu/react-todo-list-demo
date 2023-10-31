@@ -1,5 +1,5 @@
 import { FC } from "react"
-import type { TabbarColorListProps } from "../modules/modules"
+import type { TabbarColorListProps } from "@Tabbar/modules/modules"
 
 const TabbarColorList: FC<TabbarColorListProps> = ({colorList, onAddTask}: TabbarColorListProps)=> {
     const handleClick = (index: number) =>{
@@ -14,13 +14,11 @@ const TabbarColorList: FC<TabbarColorListProps> = ({colorList, onAddTask}: Tabba
         )
     })
     return (
-        <>
-            <div className="tabbar-color-list mt-6">
-                <ul className="flex flex-col gap-6">
-                    {list}
-                </ul>
-            </div>
-        </>
+        <div className="tabbar-color-list mt-6">
+            <ul className="flex flex-col gap-6">
+                {list}
+            </ul>
+        </div>
     )
 }
 

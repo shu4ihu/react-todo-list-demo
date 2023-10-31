@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/node": "^20.8.10",
     "@unocss/reset": "^0.57.1",
     "nvm": "^0.0.4",
     "pnpm": "^8.9.2",
