@@ -4,12 +4,18 @@ import { TaskCard } from "./components/TaskCard"
 
 const Task: FC<TaskProps>= ({taskList, setTaskList}:TaskProps): ReactNode => {
     
-    // 删除 task
+    /**
+     * @description 根据taskId删除task
+     * @param taskId 
+     */
     const handleDelTask = (taskId: number): void => {
         setTaskList(taskList.filter((task: TaskModel): boolean => task.id !== taskId))
     }
 
-    // 完成 task
+    /**
+     * @description 根据taskId修改task的isDone状态
+     * @param taskId 
+     */
     const handleDoneTask = (taskId: number): void => {
         const taskIndex = taskList.findIndex((task: TaskModel): boolean => task.id === taskId)
         setTaskList(taskList.map((taskItem: TaskModel, index: number): TaskModel => {
@@ -20,7 +26,11 @@ const Task: FC<TaskProps>= ({taskList, setTaskList}:TaskProps): ReactNode => {
         }))
     }
 
-    // 修改 task
+    /**
+     * @description textarea每次change把newText修改为对应taskId的task的content
+     * @param newText 
+     * @param taskId 
+     */
     const handleTextChange = (newText:string, taskId:number): void => {
         const taskIndex = taskList.findIndex((task: TaskModel): boolean => task.id === taskId)
         setTaskList(taskList.map((taskItem: TaskModel, index: number): TaskModel => {
@@ -31,7 +41,6 @@ const Task: FC<TaskProps>= ({taskList, setTaskList}:TaskProps): ReactNode => {
         }))
     }
 
-    // 展示 task
     const showTaskList = () : ReactNode  => {
         return taskList.map((task: TaskModel, index:number) => {
             return (

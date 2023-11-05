@@ -14,7 +14,10 @@ export const TaskCard:FC<TaskCardProps> = ({taskItem, onDel, onDone, onTextChang
     const bgColor = {
       backgroundColor: taskItem.cardColor
     }
-
+    
+    /**
+     * @description textarea获取焦点，光标移动到最后
+     */
     const handleFocus = (): void => {
       textareaRef.current?.focus()
       textareaRef.current?.setSelectionRange(-1,-1)

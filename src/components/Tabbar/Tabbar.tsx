@@ -8,10 +8,17 @@ const Tabbar:FC<TabbarProps> = ({ taskList, setTaskList}: TabbarProps): ReactNod
     const [showColorList, setShowColorList] = useState(false)
     const colorList: string[] = ['#f7d289','#f2aa85','#b99ff7','#63d6fa','#e9f1a4']
 
+    /**
+     * @description 点击添加任务按钮，显示颜色列表
+     */
     const handleAddTaskClick = (): void => {
         setShowColorList(!showColorList)
     }
     
+    /**
+     * @description 根据index决定任务卡颜色，然后添加任务
+     * @param index 
+     */
     const handleAddTask = (index: number): void => {
         const task: TaskModel = {
             id: Date.now(),

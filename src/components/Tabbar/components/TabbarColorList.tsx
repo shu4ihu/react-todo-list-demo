@@ -2,9 +2,16 @@ import { FC } from "react"
 import type { TabbarColorListProps } from "@Tabbar/modules/modules"
 
 const TabbarColorList: FC<TabbarColorListProps> = ({colorList, onAddTask}: TabbarColorListProps)=> {
+    
+    /**
+     * @description 调用父组件的handleAddTask方法，添加任务
+     * @param index 
+     */
     const handleClick = (index: number) =>{
         onAddTask(index)
     }
+
+    
     const list = colorList.map((item: string, index: number):JSX.Element => {
         const key = `${item}-${index}`
         return (
