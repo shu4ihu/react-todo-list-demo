@@ -4,7 +4,7 @@ import TabbarLogoText from '@TabbarComp/TabbarLogoText'
 import type { TaskModel } from '@Task/modules/modules'
 import type { TabbarProps } from '@Tabbar/modules/modules'
 
-const Tabbar:FC<TabbarProps> = ({ taskList, setTaskList}: TabbarProps): ReactNode=>{
+const Tabbar:FC<TabbarProps> = ({ taskList, setTaskList, setSearchTaskList}: TabbarProps): ReactNode=>{
     const [showColorList, setShowColorList] = useState(false)
     const colorList: string[] = ['#f7d289','#f2aa85','#b99ff7','#63d6fa','#e9f1a4']
 
@@ -28,6 +28,7 @@ const Tabbar:FC<TabbarProps> = ({ taskList, setTaskList}: TabbarProps): ReactNod
             isDone: false
         } 
         setTaskList([...taskList,task])
+        setSearchTaskList([...taskList,task])
     }
 
     return (

@@ -13,6 +13,7 @@ export default defineConfig({
 			"@Task": path.resolve(__dirname, "./src/components/Task"),
 			"@TabbarComp": path.resolve(__dirname, "./src/components/Tabbar/components"),
 			"@TaskComp": path.resolve(__dirname, "./src/components/Task/components"),
+			"@SearchBar": path.resolve(__dirname, "./src/components/SearchBar"),
 		},
 	},
 });

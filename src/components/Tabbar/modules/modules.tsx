@@ -8,6 +8,7 @@ interface TabbarColorListProps {
 interface TabbarProps{
     taskList: TaskModel[]
     setTaskList: (taskList: TaskModel[]) => void
+    setSearchTaskList: (taskList: TaskModel[]) => void
 }
 
 export type { TabbarColorListProps, TabbarProps }

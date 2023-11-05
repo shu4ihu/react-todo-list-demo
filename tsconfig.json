@@ -37,6 +37,9 @@
       "@TaskComp/*":[
         "src/components/Task/components/*"
       ],
+      "@SearchBar/*":[
+        "src/components/SearchBar/*"
+      ],
     }
   },
   "include": ["src"],

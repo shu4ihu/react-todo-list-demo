@@ -64,18 +64,34 @@ function App(): ReactNode {
             isDone: true
         }
     ])
+    const [searchTaskList, setSearchTaskList] = useState<TaskModel[]>(taskList)
+
+    /**
+     * @description 根据输入的内容进行搜索,并更新搜索结果
+     * @param inputValue 
+     */
+    const handleSearch = (inputValue: string) => {
+      if(inputValue === '') {
+        setSearchTaskList(taskList)
+      }else{
+        const newTaskList = taskList.filter((item) => {
+          return item.content.includes(inputValue)
+        })
+        setSearchTaskList(newTaskList)
+      }
+    }
 
   return (
     <>
       <div className="w-100vw h-100vh md:flex">
-        <Tabbar taskList={taskList} setTaskList={setTaskList}/>
+        <Tabbar taskList={taskList} setTaskList={setTaskList} setSearchTaskList={setSearchTaskList}/>
         <div className='md:w-84vw h-full md:pl-8 flex flex-col md:items-baseline'>
-            <SearchBar></SearchBar>
+            <SearchBar onSearch={handleSearch}></SearchBar>
             <div className="w-full md:pl-0 pl-8vw">
               <div className="text-6xl font-600">Notes</div>
             </div>
             <div className="taskArea w-full pt-6vh md:pl-0 pl-8vw">
-              <Task taskList={taskList} setTaskList={setTaskList}></Task>
+              <Task taskList={searchTaskList} setTaskList={setSearchTaskList}></Task>
             </div>
         </div>
       </div>
