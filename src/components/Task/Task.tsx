@@ -42,7 +42,14 @@ const Task: FC<TaskProps>= ({taskList, setTaskList}:TaskProps): ReactNode => {
     }
 
     const showTaskList = () : ReactNode  => {
-        return taskList.map((task: TaskModel, index:number) => {
+        if(taskList.length === 0){
+            return (
+                <div className="flex justify-center items-center w-full h-full">
+                    <div className="text-2xl text-coolGray">No Task</div>
+                </div>
+            )
+        }
+        else return taskList.map((task: TaskModel, index:number) => {
             return (
                 <div key={index}>
                     <TaskCard taskItem={task} onDel={handleDelTask} onDone={handleDoneTask} onTextChange={handleTextChange}></TaskCard>

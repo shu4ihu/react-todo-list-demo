@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import Tabbar from "@Tabbar/Tabbar"
 import Task from "@Task/Task"
 import SearchBar from "@/components/SearchBar/SearchBar"
@@ -66,8 +66,13 @@ function App(): ReactNode {
     ])
     const [searchTaskList, setSearchTaskList] = useState<TaskModel[]>(taskList)
 
+    // 监听taskList的变化，更新searchTaskList
+    useEffect(() => {
+      setSearchTaskList(taskList)
+    }, [taskList])
+
     /**
-     * @description 根据输入的内容进行搜索,并更新搜索结果
+     * @description 根据inputValue进行搜索,并更新搜索结果
      * @param inputValue 
      */
     const handleSearch = (inputValue: string) => {
@@ -84,7 +89,7 @@ function App(): ReactNode {
   return (
     <>
       <div className="w-100vw h-100vh md:flex">
-        <Tabbar taskList={taskList} setTaskList={setTaskList} setSearchTaskList={setSearchTaskList}/>
+        <Tabbar taskList={taskList} setTaskList={setTaskList}/>
         <div className='md:w-84vw h-full md:pl-8 flex flex-col md:items-baseline'>
             <SearchBar onSearch={handleSearch}></SearchBar>
             <div className="w-full md:pl-0 pl-8vw">
